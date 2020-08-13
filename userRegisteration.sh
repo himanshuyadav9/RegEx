@@ -57,12 +57,24 @@ isMobileNumber
 function isValidPassword()
 {
    read -p "enter minimum 8 character password :"  userPassword
-   pattern='[[:alpha:]]{8,}'
-   if [[ $userPassword =~ $pattern  ]]
+   passwordPattern='[[:alpha:]]{8,}'
+   if [[ $userPassword =~ $passwordPattern  ]]
+   then
+          isOneUpperCase
+   else
+        echo "Invalid\n"
+   fi
+}
+
+function isOneUpperCase()
+{
+   oneUpperCasePattern='([[:upper:]]{1,})'
+   if [[ $userPassword =~ $oneUpperCasePattern  ]]
    then
          echo "valid\n"
    else
-        echo "Invalid enter 8 minimum characters\n"
+        echo "Invalid enter atleast one upper case\n"
    fi
 }
 isValidPassword
+
