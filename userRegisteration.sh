@@ -14,3 +14,16 @@ function isFirstName()
    fi
 }
 isFirstName
+
+function islastName()
+{
+   read -p "enter last name :" lastName
+   pattern='(^[[:upper:]][[:alpha:]]{2,14}$)'
+   if [[ $lastName =~ $pattern  ]]
+   then
+         echo "last name : $lastName"
+   else
+        echo "enter valid last name"
+   fi
+}
+islastName
