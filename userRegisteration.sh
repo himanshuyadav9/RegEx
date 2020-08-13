@@ -27,3 +27,16 @@ function islastName()
    fi
 }
 islastName
+
+function isEmail()
+{
+   read -p "enter Email :" email
+   pattern='^([a-z]+(\-|\.|\_|\+)?[a-z0-9]*\+?((\.|\-|\_)?[a-z]+[a-z0-9]*)*)@(([a-z0-9]+)+((\.|\-|\_)?([a-z0-9]+)+)*)+\.([a-z]{2,})+$'
+   if [[ $email =~ $pattern  ]]
+   then
+         echo "Email : $email"
+   else
+        echo "enter valid email"
+   fi
+}
+isEmail
