@@ -40,3 +40,16 @@ function isEmail()
    fi
 }
 isEmail
+
+function isMobileNumber()
+{
+   read -p "enter mobile number :" number
+   pattern='^[0-9]{2}[ ][0-9]{10}$'
+   if [[ $number =~ $pattern  ]]
+   then
+         echo "mobile number : $number"
+   else
+        echo "enter valid number"
+   fi
+}
+isMobileNumber
