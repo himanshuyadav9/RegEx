@@ -82,11 +82,23 @@ function isOneNumeric()
    oneNumericPattern='[0-9]{1,}'
    if [[ $userPassword =~ $oneNumericPattern  ]]
    then
-         echo "valid\n"
+         isOneSpecial
    else
         echo "Invalid enter atleast one numeric value\n"
    fi
 }
-isValidPassword
 
+function isOneSpecial()
+{
+   specialChar='!@#$%^&*()_+|"?{}><'
+   oneSpecialPattern="^[^$specialChar]*[$specialChar][^$specialChar]*$"
+   if [[ $userPassword =~ $oneSpecialPattern  ]]
+   then
+          echo "valid"
+   else
+        echo "Invalid enter atleast one special character value\n"
+   fi
+}
+
+isValidPassword
 
