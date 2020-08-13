@@ -53,3 +53,16 @@ function isMobileNumber()
    fi
 }
 isMobileNumber
+
+function isValidPassword()
+{
+   read -p "enter minimum 8 character password :"  userPassword
+   pattern='[[:alpha:]]{8,}'
+   if [[ $userPassword =~ $pattern  ]]
+   then
+         echo "valid\n"
+   else
+        echo "Invalid enter 8 minimum characters\n"
+   fi
+}
+isValidPassword
