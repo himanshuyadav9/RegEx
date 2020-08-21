@@ -31,7 +31,7 @@ islastName
 function isEmail()
 {
    read -p "enter Email :" email
-   pattern='^([a-z]+(\-|\.|\_|\+)?[a-z0-9]*\+?((\.|\-|\_)?[a-z]+[a-z0-9]*)*)@(([a-z0-9]+)+((\.|\-|\_)?([a-z0-9]+)+)*)+\.([a-z]{2,})+$'
+   pattern="^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)@[0-9a-zA-Z]+.[a-zA-Z]{2,5}([.][a-zA-Z]{2,3})$"
    if [[ $email =~ $pattern  ]]
    then
          echo "Email : $email"
@@ -44,7 +44,7 @@ isEmail
 function isMobileNumber()
 {
    read -p "enter mobile number :" number
-   pattern='^[0-9]{2}[ ][0-9]{10}$'
+   pattern='[+][1-9]{1}[0-9]{1,2}[ ][1-9]{1}[0-9]{7,9}'
    if [[ $number =~ $pattern  ]]
    then
          echo "mobile number : $number"
